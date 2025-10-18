@@ -1,4 +1,4 @@
-def parity_multiplication(list_of_nums):
+def multiply_parities(list_of_nums):
     """
     Multiply values in a list of numbers based on their parity.
 
@@ -8,9 +8,13 @@ def parity_multiplication(list_of_nums):
     Returns:
     result(list): A list containing multiplied numbers.
     """
-    return [num * 2 if num % 2 == 0 else num * 3 for num in list_of_nums]  # Checks the remainder to see if the number is even or odd
+    try:
+        transformed_list = [num * 2 if num % 2 == 0 else num * 3 for num in list_of_nums]  # Checks the remainder to see if the number is even or odd
+    except ValueError:
+        print(f"List must contain numbers only")
+    return transformed_list
 
-def mixed_case_concatenation(list_of_words):
+def concatenate_mixed_case(list_of_words):
     """
     Make a mixed case sentence where words length five or more are upper case and the rest are lower case.
 
@@ -40,8 +44,8 @@ def script_logic():
     number_list = [1, 2, 3, 4, 5, 6, 7]
     fruit_list = ["apple", "banana", "kiwi", "grapefruit", "cherry"]
 
-    print(f"Processed Numbers: {parity_multiplication(number_list)}")
-    print(f"Processed Strings: {mixed_case_concatenation(fruit_list)}")
+    print(f"Processed Numbers: {multiply_parities(number_list)}")
+    print(f"Processed Strings: {concatenate_mixed_case(fruit_list)}")
 
 
 if __name__ == "__main__":
